@@ -64,13 +64,13 @@ public class peerProcess {
             optimisticUnchokingInterval = commonConfig.getOptimisticUnchokingInterval();
             
             // Initialize file manager
-            String peerDirectory = workingDir + File.separator + peerId;
+            String peerDirectory = workingDir + File.separator + "peer_" + peerId;
             fileManager = new FileManager(peerDirectory, commonConfig.getFileName(), 
                                         commonConfig.getPieceSize(), commonConfig.getFileSize(), 
                                         myPeerInfo.hasFile());
             
             // Initialize logger
-            String logPath = workingDir + File.separator + "log_" + peerId + ".log";
+            String logPath = workingDir + File.separator + "log_peer_" + peerId + ".log";
             logger = new Logger(peerId, logPath);
             
             System.out.println("Peer " + peerId + " starting...");
