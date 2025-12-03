@@ -190,6 +190,9 @@ public class peerProcess {
             
             connections.put(otherPeerId, connection);
             
+            // Update interest
+            connection.updateInterest();
+            
             // Start message handler for this connection
             final PeerConnection conn = connection;
             executorService.submit(() -> {
